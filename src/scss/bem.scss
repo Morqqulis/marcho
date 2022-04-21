@@ -1,3 +1,37 @@
 // Заголовки, общие БЄМ блоки и проче...
 
-$r: "Roboto", sans-serif;
+$rbt: "Roboto",
+sans-serif;
+$mc: #FE3E57;
+
+.btn {
+    max-height: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 28px;
+    white-space: nowrap;
+    background-color: #FE3E57;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: $rbt;
+    font-weight: 400;
+    line-height: 26px;
+
+    &--tpr {
+        background-color: transparent;
+        color: #000;
+        letter-spacing: 200;
+    }
+
+    transition: all 0.4s ease 0s;
+
+    &:hover {}
+}
+
+.title {
+    font-family: $rbt;
+    font-size: 48px;
+    line-height: 26px;
+}
