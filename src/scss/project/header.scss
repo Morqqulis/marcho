@@ -1,6 +1,7 @@
 //====================================================================================================
 .header {
 	position: relative;
+	z-index: 50;
 
 	&__container {}
 
@@ -13,6 +14,16 @@
 
 		@media (max-width:$pc) {
 			padding-right: 10px;
+		}
+
+		@media (max-width:$mobile) {
+			overflow: hidden;
+		}
+
+		@media (max-width:$mobileSmall) {
+			flex-direction: column;
+			justify-content: center;
+			gap: 35px;
 		}
 	}
 
@@ -31,18 +42,38 @@
 .menu {
 	display: flex;
 	@include adaptiveValue("gap", 45, 25, 1200, 768, 1);
+	transition: all 0.4s ease 0s;
 
 	@media (max-width:$mobile) {
 		position: absolute;
-		top: 110px;
+		top: 100px;
 		left: 0;
 		right: 0;
 		display: block;
+		text-align: center;
+		background-color: $mc;
+		color: #fff;
+		padding: 25px 0;
+		transform: translate(-100%, 0px);
+		overflow: auto;
+		height: 100vh;
+	}
+
+
+
+	@media (max-width:$mobileSmall) {
+		top: 200px;
 	}
 
 	&__icon {}
 
 	&__item {
+		@media (max-width:$mobile) {
+
+			&:not(:last-child) {
+				margin-bottom: 35px;
+			}
+		}
 	}
 
 	&__link {
@@ -55,6 +86,11 @@
 		font-family: $rbt;
 		font-weight: 400;
 		display: block;
+
+		@media (max-width:$mobile) {
+			font-size: 20px;
+			padding: 10px 0;
+		}
 
 		&::before {
 			content: '';
@@ -72,11 +108,23 @@
 		&:hover {
 			font-size: 14px;
 			color: $mc;
+			text-shadow: 0px -25px 1px $mc;
+
+			@media (max-width:$mobile) {
+				text-shadow: none;
+				font-size: 23px;
+				color: #000;
+			}
 
 			&::before {
 				content: '';
 				opacity: 1;
 				width: 50px;
+
+				@media (max-width:$mobile) {
+					width: 100%;
+					background-color: #000;
+				}
 			}
 		}
 	}
@@ -85,6 +133,11 @@
 .control {
 	display: flex;
 	@include adaptiveValue("gap", 25, 20);
+
+	@media (max-width:$mobileSmall) {
+		justify-content: space-around;
+		width: 100%;
+	}
 
 	&__item {}
 
@@ -122,6 +175,13 @@
 		top: -10px;
 		right: -51%;
 		font-size: 12px;
+	}
+}
+
+
+.menu-open {
+	.header__menu {
+		transform: translate(0px, 0px);
 	}
 }
 

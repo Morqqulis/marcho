@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 @@include('html/_head.htm',{
 "title":"Главная"
 })
@@ -8,6 +8,37 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
+			<section class="hero">
+				<div class="hero__container">
+					<div class="hero__inner">
+						<!-- Оболочка слайдера -->
+						<div class="hero__slider swiper">
+							<!-- Двигающееся часть слайдера -->
+							<div class="hero__wrapper swiper-wrapper">
+								<!-- Слайд -->
+								<div class="hero__slide swiper-slide">
+									<div class="hero__content">
+										<div class="hero__text-box">
+											<h1 class="hero__title">
+												New Season
+												New Brand Collection
+											</h1>
+											<p class="hero__text">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+												et dolore magna aliqua. Ipsum.
+											</p>
+										</div>
+										<button class="hero__btn btn" type="button">BUY NOW</button>
+									</div>
+									
+								</div>
+							</div>
+							<!-- Если нужна пагинация -->
+							<div class="hero__pagination swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

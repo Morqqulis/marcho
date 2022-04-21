@@ -1,0 +1,41 @@
+//====================================================================================================
+.hero {
+    @include adaptiveValue("padding-top", 70, 15);
+    height: 100vh;
+    &__container {}
+
+    &__inner {}
+
+    &__slider {}
+
+    &__wrapper {}
+
+    &__slide {
+    }
+
+    &__content {}
+
+    &__text-box {
+        max-width: 553px;
+        @include adaptiveValue("margin-bottom", 45, 40);
+    }
+
+    &__title {
+        font-family: $rbt;
+        color: $ttc;
+        @include adaptiveValue("font-size", 58,50 );
+        @include adaptiveValue("line-height", 68, 60);
+
+    }
+
+    &__text {
+        white-space: pre-line;
+        line-height: 26px;
+    }
+
+    &__btn {}
+
+    &__pagination {}
+}
+
+//====================================================================================================

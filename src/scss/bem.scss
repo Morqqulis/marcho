@@ -1,8 +1,14 @@
 // Заголовки, общие БЄМ блоки и проче...
-
+$ttc: #29282D;
 $rbt: "Roboto",
 sans-serif;
 $mc: #FE3E57;
+
+%anim {
+    transform: scale(1.1);
+    color: $mc;
+    fill: $mc;
+}
 
 .btn {
     max-height: 50px;
@@ -18,19 +24,29 @@ $mc: #FE3E57;
     font-family: $rbt;
     font-weight: 400;
     line-height: 26px;
+    box-shadow: 0 5px 15px rgb(134, 134, 134);
 
     &--tpr {
         background-color: transparent;
-        color: #000;
+        color: $ttc;
         letter-spacing: 200;
     }
 
     transition: all 0.4s ease 0s;
 
-    &:hover {}
+    &:hover {
+        transform: scale(1.1);
+        color: #000;
+    }
+
+    &:active {
+        transform: scale(.9);
+        color: #2680EB;
+    }
 }
 
 .title {
+    color: $ttc;
     font-family: $rbt;
     font-size: 48px;
     line-height: 26px;

@@ -14,11 +14,12 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ===============================================
-$fontFamily: 'Quicksand', sans-serif;
+$fontFamily: 'Quicksand',
+sans-serif;
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #000; // Цвет шрифта по умолчанию
+$mainColor: #8D8D8D; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ========================================================
 // Минимальная ширина страницы
@@ -50,6 +51,9 @@ $responsiveType: 1;
 
 body {
 	font-weight: 500;
+	background-color: #F6F6F6;
+	line-height: math.div(16, 26);
+
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
@@ -145,11 +149,9 @@ body {
 @import "bem";
 
 // Подключение стилей отдельных блоков
-@import "project/header"; 
+@import "project/header";
+@import "project/hero";
 @import "project/footer";
 
 // Подключение стилей отдельных страниц
 @import "project/page/home";
-
-
-
