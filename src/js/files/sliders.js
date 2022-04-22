@@ -36,13 +36,13 @@ function initSliders() {
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: false,
-			speed: 3000,
+			spaceBetween: 10,
+			autoHeight: true,
+			speed: 800,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
+			loop: true,
 			//preloadImages: false,
 			//lazy: true,
 
@@ -56,12 +56,10 @@ function initSliders() {
 			*/
 
 			// Пагинация
-			/*
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.hero__pagination',
 				clickable: true,
 			},
-			*/
 
 			// Скроллбар
 			/*
