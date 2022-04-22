@@ -1,0 +1,130 @@
+.categories {
+
+    &__container {}
+
+    &__title {}
+
+    &__subtitle {}
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(2, 303px);
+        grid-gap: 30px;
+
+        @media (max-width:$tablet) {
+            grid-template-columns: repeat(auto-fill, minmax(320, 370px));
+            grid-template-rows: repeat(4, minmax(auto, 303px));
+        }
+    }
+
+    &__item {
+        background-repeat: no-repeat;
+
+        @include adaptiveValue("padding-left", 40, 5);
+        @include adaptiveValue("padding-top", 35, 5);
+
+        &:nth-child(1) {
+            grid-column: span 1;
+            grid-row: span 2;
+
+            @media (max-width:$tablet) {
+                grid-column: 1;
+            }
+
+            background-position: right bottom;
+            background-color: #EDDDEE;
+
+            span {
+                color: #5800E4;
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
+
+        &:nth-child(2) {
+            grid-column: span 2;
+            display: grid;
+
+            @media (max-width:$tablet) {
+                grid-column: 1/4;
+                grid-row: 3;
+            }
+            @media (max-width:$mobile){
+                 min-width: 320px; 
+            }
+
+            align-content: center;
+            background-color: #DDEDEE;
+            background-position: right bottom;
+
+            span {
+                color: $mc;
+            }
+        }
+
+        &:nth-child(3) {
+            grid-row: 2;
+            grid-column: 2;
+
+            @media (max-width:$tablet) {
+                grid-column: 2/4;
+            }
+
+            background-color: #FEF5A8;
+            background-position: right bottom;
+
+            span {
+                color: #FFB534;
+            }
+        }
+
+        &:nth-child(4) {
+            grid-row: 2;
+            grid-column: 3;
+
+            @media (max-width:$tablet) {
+                grid-row: 1;
+                grid-column: 2/4;
+            }
+
+            background-color: #ECECEC;
+            background-position: right bottom;
+
+            span {
+                color: #34C3FF;
+            }
+        }
+    }
+
+    &__name {
+        line-height: 26px;
+        display: inline-block;
+        margin-bottom: 4px;
+        text-transform: capitalize;
+    }
+
+    &__type {
+        font-size: 22px;
+        font-family: $rbt;
+        margin-bottom: 10px;
+        color: $ttc;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    &__link {
+        letter-spacing: 50;
+        line-height: 19px;
+        width: fit-content;
+        color: $ttc;
+        font-family: $rbt;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $mc;
+            border-bottom: 1px solid $mc;
+        }
+    }
+}

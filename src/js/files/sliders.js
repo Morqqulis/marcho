@@ -37,23 +37,23 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 10,
-			autoHeight: true,
-			speed: 800,
+			autoHeight: false,
+			speed: 1000,
 
-			//touchRatio: 0,
+			touchRatio: 1,
 			//simulateTouch: false,
 			loop: true,
 			//preloadImages: false,
 			//lazy: true,
 
-			/*
+		
 			// Эффекты
-			effect: 'fade',
+			// effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-			*/
+		
 
 			// Пагинация
 			pagination: {
