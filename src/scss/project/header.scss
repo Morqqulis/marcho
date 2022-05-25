@@ -3,7 +3,8 @@
 	position: relative;
 	z-index: 50;
 
-	&__container {}
+	&__container {
+	}
 
 	&__nav {
 		@include adaptiveValue("padding-top", 40, 30);
@@ -12,31 +13,44 @@
 		justify-content: space-between;
 		align-items: center;
 
-		@media (max-width:$pc) {
+		@media (max-width: $pc) {
 			padding-right: 10px;
 		}
 
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			overflow: hidden;
+			
 		}
 
-		@media (max-width:$mobileSmall) {
-			flex-direction: column;
-			justify-content: center;
-			gap: 35px;
+		@media (max-width: $mobileSmall) {
+			display: grid;
+			grid-template-columns: repeat(2, auto);
+			justify-content: space-between;
+			grid-gap: 50px;
+			
 		}
 	}
 
-	&__logo {}
+	&__logo {
+	
+	}
 
-	&__menu {}
+	&__menu {
+	}
 
-	&__control {}
+	&__control {
+		@media (max-width: $mobileSmall) {
+			grid-column: 1/3;
+		}
+	}
 }
 
 .logo {
-
-	&__img {}
+	&__img {
+		@media (max-width:$mobile){
+			width: 65%; 
+		}
+	}
 }
 
 .menu {
@@ -44,7 +58,7 @@
 	@include adaptiveValue("gap", 45, 25, 1200, 768, 1);
 	transition: all 0.4s ease 0s;
 
-	@media (max-width:$mobile) {
+	@media (max-width: $mobile) {
 		position: absolute;
 		top: 100px;
 		left: 0;
@@ -53,23 +67,22 @@
 		text-align: center;
 		background-color: $mc;
 		color: #fff;
-		padding: 25px 0;
+		padding: 50px 0;
 		transform: translate(-100%, 0px);
 		overflow: auto;
 		height: 100vh;
 	}
 
-
-
-	@media (max-width:$mobileSmall) {
-		top: 200px;
+	@media (max-width: $mobileSmall) {
+		top: 150px;
+		
 	}
 
-	&__icon {}
+	&__icon {
+	}
 
 	&__item {
-		@media (max-width:$mobile) {
-
+		@media (max-width: $mobile) {
 			&:not(:last-child) {
 				margin-bottom: 35px;
 			}
@@ -87,13 +100,13 @@
 		font-weight: 400;
 		display: block;
 
-		@media (max-width:$mobile) {
+		@media (max-width: $mobile) {
 			font-size: 20px;
 			padding: 10px 0;
 		}
 
 		&::before {
-			content: '';
+			content: "";
 			position: absolute;
 			bottom: 0;
 			left: 50%;
@@ -110,18 +123,18 @@
 			color: $mc;
 			text-shadow: 0px -25px 1px $mc;
 
-			@media (max-width:$mobile) {
+			@media (max-width: $mobile) {
 				text-shadow: none;
 				font-size: 23px;
 				color: #000;
 			}
 
 			&::before {
-				content: '';
+				content: "";
 				opacity: 1;
 				width: 50px;
 
-				@media (max-width:$mobile) {
+				@media (max-width: $mobile) {
 					width: 100%;
 					background-color: #000;
 				}
@@ -134,12 +147,13 @@
 	display: flex;
 	@include adaptiveValue("gap", 25, 20);
 
-	@media (max-width:$mobileSmall) {
+	@media (max-width: $mobileSmall) {
 		justify-content: space-around;
 		width: 100%;
 	}
 
-	&__item {}
+	&__item {
+	}
 
 	&__link {
 		position: relative;
@@ -178,7 +192,6 @@
 	}
 }
 
-
 .menu-open {
 	.header__menu {
 		transform: translate(0px, 0px);
@@ -194,7 +207,6 @@
 	transition: all 0.4s ease 0s;
 
 	&:hover {
-
 		span,
 		&::before,
 		&::after {
@@ -240,7 +252,8 @@
 			}
 
 			&::before,
-			&::after {}
+			&::after {
+			}
 
 			&::before {
 				top: calc(50% - rem(1));

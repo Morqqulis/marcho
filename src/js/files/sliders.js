@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Pagination, Autoplay } from 'swiper';
+import Swiper, { Pagination, Autoplay } from "swiper";
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -27,9 +27,11 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.hero__slider')) { // Указываем скласс нужного слайдера
+	if (document.querySelector(".hero__slider")) {
+		// Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.hero__slider', { // Указываем скласс нужного слайдера
+		new Swiper(".hero__slider", {
+			// Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Pagination, Autoplay],
@@ -46,18 +48,16 @@ function initSliders() {
 			//preloadImages: false,
 			//lazy: true,
 
-		
 			// Эффекты
 			// effect: 'fade',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
-		
 
 			// Пагинация
 			pagination: {
-				el: '.hero__pagination',
+				el: ".hero__pagination",
 				clickable: true,
 			},
 
@@ -98,31 +98,30 @@ function initSliders() {
 			},
 			*/
 			// События
-			on: {
-
-			}
+			on: {},
 		});
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {
-	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
+	let sliderScrollItems = document.querySelectorAll(".swiper_scroll");
 	if (sliderScrollItems.length > 0) {
 		for (let index = 0; index < sliderScrollItems.length; index++) {
 			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
+			const sliderScrollBar =
+				sliderScrollItem.querySelector(".swiper-scrollbar");
 			const sliderScroll = new Swiper(sliderScrollItem, {
 				observer: true,
 				observeParents: true,
-				direction: 'vertical',
-				slidesPerView: 'auto',
+				direction: "vertical",
+				slidesPerView: "auto",
 				freeMode: {
 					enabled: true,
 				},
 				scrollbar: {
 					el: sliderScrollBar,
 					draggable: true,
-					snapOnRelease: false
+					snapOnRelease: false,
 				},
 				mousewheel: {
 					releaseOnEdges: true,

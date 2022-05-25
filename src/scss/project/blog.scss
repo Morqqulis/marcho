@@ -1,0 +1,114 @@
+.blog {
+	@include adaptiveValue("margin-bottom", 100, 0);
+	position: relative;
+	&__container {
+	}
+
+	&__inner {
+	}
+
+	&__title {
+		margin-bottom: 13px;
+		text-align: center;
+	}
+
+	&__subtitle {
+		margin: 0px auto 40px auto;
+		max-width: 570px;
+		text-align: center;
+	}
+
+	&__row {
+		@include adaptiveValue("padding-bottom", 61, 31);
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@media (max-width: $tablet) {
+			justify-content: space-around;
+		}
+	}
+	&__decor {
+		position: absolute;
+		display: block;
+		z-index: -1;
+		&:nth-child(1) {
+			background: url("@img/blog/d1.svg") no-repeat;
+
+			left: 5%;
+			top: 50%;
+			width: 105px;
+			height: 105px;
+		}
+		&:nth-child(2) {
+			background: url("@img/blog/d2.svg") no-repeat;
+			width: 126px;
+			height: 53px;
+			right: 26%;
+			top: 17.5%;
+		}
+		&:nth-child(3) {
+			background: url("@img/blog/d3.svg") no-repeat;
+			width: 94px;
+			height: 94px;
+			bottom: 0%;
+			right: 10%;
+		}
+	}
+	&__article {
+		max-width: 365px;
+		width: 100%;
+		transition: all 0.4s ease 0s;
+		&:hover {
+			box-shadow: 20px 0 60px #cacaca;
+			transform: scale(1.05);
+			a {
+				color: $mc;
+			}
+		}
+		@media (max-width: $mobile) {
+			max-width: 420px;
+		}
+	}
+
+	&__img {
+		width: 100%;
+	}
+
+	&__desc {
+		@include adaptiveValue("padding-top", 28, 15);
+		@include adaptiveValue("padding-right", 44, 15);
+		@include adaptiveValue("padding-bottom", 45, 15);
+		@include adaptiveValue("padding-left", 44, 15);
+	}
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 16px;
+	}
+	&__author {
+		padding-left: 30px;
+		background: url("@img/blog/user.svg") left no-repeat;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+
+	&__date {
+		padding-left: 30px;
+		background: url("@img/blog/time.svg") left no-repeat;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+
+	&__text {
+		line-height: math.div(32, 22);
+		color: $ttc;
+		margin-bottom: 5px;
+		@include adaptiveValue("font-size", 22, 18);
+	}
+
+	&__link {
+		transition: all 0.4s ease 0s;
+		&:hover {
+			color: $mc;
+			transform: scale(1.2);
+		}
+	}
+}

@@ -14,12 +14,11 @@
 //@import "fonts/icons";
 
 // Шрифт по умолчанию ===============================================
-$fontFamily: 'Quicksand',
-sans-serif;
+$fontFamily: "Quicksand", sans-serif;
 $fontSize: rem(16); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #8D8D8D; // Цвет шрифта по умолчанию
+$mainColor: #8d8d8d; // Цвет шрифта по умолчанию
 
 // НАСТРОЙКИ ========================================================
 // Минимальная ширина страницы
@@ -33,10 +32,12 @@ $maxWidthContainer: 1170;
 $containerPadding: 30;
 
 // Ширина срабатывания первого брейкпоинта
-$containerWidth: $maxWidthContainer+$containerPadding;
+$containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em(
+	$containerWidth
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
@@ -51,8 +52,8 @@ $responsiveType: 1;
 
 body {
 	font-weight: 500;
-	background-color: #F6F6F6;
-	line-height: math.div(16, 26);
+	background-color: #f6f6f6;
+	line-height: math.div(26, 16);
 
 	// Скролл заблокирован
 	.lock & {
@@ -61,7 +62,8 @@ body {
 	}
 
 	// Сайт загружен
-	.loaded & {}
+	.loaded & {
+	}
 }
 
 // Оболочка ===========================================
@@ -72,12 +74,12 @@ body {
 	overflow: hidden;
 
 	// Прижимаем footer
-	>main {
+	> main {
 		flex: 1 1 auto;
 	}
 
 	// Фикс для слайдеров
-	>* {
+	> * {
 		min-width: 0;
 	}
 }
@@ -91,7 +93,6 @@ body {
 Снипет (HTML): cnt
 */
 @if ($responsiveType==1) {
-
 	// Отзывчивая
 	[class*="__container"] {
 		@if ($maxWidthContainer>0) {
@@ -104,10 +105,7 @@ body {
 			padding: 0 rem(math.div($containerPadding, 2));
 		}
 	}
-}
-
-@else {
-
+} @else {
 	// По брейк-поинтам
 	[class*="__container"] {
 		margin: 0 auto;
@@ -115,9 +113,7 @@ body {
 		@if ($maxWidthContainer>0) {
 			max-width: rem($maxWidthContainer);
 			box-sizing: content-box;
-		}
-
-		@else {
+		} @else {
 			@if ($containerPadding>0) {
 				padding: 0 rem(math.div($containerPadding, 2));
 			}
@@ -148,7 +144,10 @@ body {
 // Подключение стилей общих элементов проекта
 @import "bem";
 
-// Подключение стилей отдельных блоков
 
+// Подключение стилей отдельных блоков
+@import "~starry-rating/src/style/Starry.scss";
 // Подключение стилей отдельных страниц
 @import "project/page/home";
+
+// @import "project/starry";

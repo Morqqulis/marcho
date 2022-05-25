@@ -1,5 +1,5 @@
 {
-	"name": "fls-start",
+	"name": "new",
 	"version": "3.0.0",
 	"description": "Start template with Gulp and Webpack",
 	"author": "FLS",
@@ -71,6 +71,7 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
-		"simplebar": "latest"
+		"simplebar": "latest",
+		"starry-rating": "^5.1.0"
 	}
 }

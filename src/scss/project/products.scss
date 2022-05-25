@@ -1,0 +1,169 @@
+.products {
+	@include adaptiveValue("margin-bottom", 120, 60);
+	&__container {
+	}
+
+	&__inner {
+		text-align: center;
+	}
+
+	&__title {
+		@include adaptiveValue("margin-bottom", 12, 10);
+	}
+
+	&__subtitle {
+		@include adaptiveValue("margin-bottom", 45, 30);
+		max-width: 575px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(auto, 370px));
+		justify-content: center;
+		@include adaptiveValue("grid-gap", 30, 15);
+		@include adaptiveValue("margin-bottom", 58, 38);
+		@media (max-width: $mobile) {
+			grid-template-columns: minmax(auto, 440px);
+		}
+	}
+
+	&__card {
+	}
+
+	&__btn {
+		margin: 0 auto;
+		cursor: pointer;
+	}
+}
+.title {
+}
+.card {
+	display: grid;
+	justify-items: center;
+	text-align: center;
+	position: relative;
+
+	&:hover {
+		.card__links {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__img {
+		width: 100%;
+		margin-bottom: 27px;
+	}
+
+	&__decor {
+		display: none;
+		text-transform: uppercase;
+		background-color: $mc;
+		padding: 0 11px;
+		color: #fff;
+		letter-spacing: 50;
+		line-height: math.div(36, 16);
+		position: absolute;
+		top: 25px;
+		left: 25px;
+		.card--sale & {
+			display: block;
+		}
+	}
+
+	&__links {
+		position: absolute;
+		top: 270px;
+		transition: all 0.4s ease 0s;
+		opacity: 0;
+		visibility: hidden;
+		display: flex;
+		background-color: #fff;
+		padding: 15px 25px;
+		max-width: 212px;
+		width: 100%;
+		justify-content: space-around;
+		border-radius: 25px;
+		box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+		@media (max-width: $mobile) {
+			top: 350px;
+		}
+		@media (max-width: $mobileSmall) {
+			// visibility: visible;
+			// opacity: 1;
+
+			@include adaptiveValue("top", 700, 230);
+		}
+	}
+
+	&__li {
+	}
+
+	&__link {
+		&:hover {
+			.card__icon {
+				fill: $mc;
+				transform: scale(1.5);
+			}
+		}
+	}
+
+	&__icon {
+		display: block;
+		fill: #29282d;
+		transition: all 0.4s ease 0s;
+	}
+
+	&__info {
+	}
+
+	&__info--prices {
+		.card__old-price {
+			display: none;
+		}
+		.card--sale & {
+			.card__old-price {
+				display: block;
+			}
+		}
+	}
+
+	&__rating {
+		display: grid;
+		justify-items: center;
+		margin-bottom: 10px;
+	}
+
+	&__name {
+		font-weight: 400;
+		color: #29282d;
+		font-family: $rbt;
+		font-size: rem(22);
+		line-height: math.div(26, 22);
+		margin-bottom: 11px;
+	}
+
+	&__prices {
+		justify-content: center;
+		display: flex;
+		grid-gap: 15px;
+		font-family: $rbt;
+	}
+
+	&__current-price {
+		color: #29282d;
+	}
+
+	&__old-price {
+		text-decoration: line-through;
+	}
+}
+.card--sale {
+}
+.rater {
+}
+.btn {
+}
+.btn--tpr {
+}

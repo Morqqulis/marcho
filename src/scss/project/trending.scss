@@ -1,0 +1,89 @@
+.trending {
+	@include adaptiveValue("padding-top", 120, 60);
+	@include adaptiveValue("padding-bottom", 120, 60);
+   @include adaptiveValue("margin-bottom", 100, 90);
+	&__container {
+	}
+
+	&__row {
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		@include adaptiveValue("gap", 65, 10, 1200, 768, 1);
+		align-items: center;
+		@media (max-width: $mobile) {
+			flex-direction: column-reverse;
+			gap: 30px;
+		}
+	}
+
+	&__col {
+	}
+   
+	&__link {
+		position: relative;
+		display: block;
+		transition: all 0.5s ease 0s;
+		&:hover {
+			transform: scale(1.05);
+			.trending__icon {
+				circle {
+					fill: rgb(63, 63, 233);
+				}
+				path {
+					fill: gold;
+				}
+			}
+		}
+	}
+
+	&__img {
+		@include adaptiveValue("width", 535, 420, 1200, 768, 1);
+		@media (max-width: $mobile) {
+			width: 100%;
+		}
+	}
+
+	&__icon {
+		position: absolute;
+		left: 50%;
+		bottom: 50%;
+		transform: translate(-50%, 50%);
+		fill: white;
+		transition: all 0.5s ease 0s;
+
+		circle {
+			transition: all 0.5s ease 0s;
+			fill: $mc;
+		}
+	}
+	&__discount {
+		@include adaptiveValue("font-size", 22, 14, 1200, 768, 1);
+		@media (max-width: $mobile) {
+			@include adaptiveValue("font-size", 22, 18);
+			text-align: center;
+		}
+	}
+	&__title {
+		margin: 1px 0px 22px 0px;
+		@include adaptiveValue("font-size", 48, 22, 1200, 768, 1);
+		@media (max-width: $mobile) {
+			@include adaptiveValue("font-size", 48, 28);
+			text-align: center;
+		}
+	}
+
+	&__text {
+		line-height: 26px;
+		color: $dflt;
+		font-size: 16px;
+		@include adaptiveValue("margin-bottom", 45, 35);
+	}
+
+	&__btn {
+		color: #fff;
+		@media (max-width: $mobile) {
+			margin: 0 auto;
+		}
+	}
+}
