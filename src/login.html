@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/_head.htm',{
-"title":"Главная"
+"title":"Вход"
 })
 
 <body>
@@ -9,12 +9,8 @@
 	<div class="wrapper">
 		@@include('html/_header.htm',{})
 		<main class="page">
-			@@include('html/hero.htm',{})
-			@@include('html/categories.htm',{})
-			@@include('html/trending.htm',{})
-			@@include('html/products.htm',{})
-			@@include('html/deal.htm',{})
-			@@include('html/blog.htm',{})
+			@@include("html/pagenav.htm",{})
+			@@include("html/modal.htm",{})
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

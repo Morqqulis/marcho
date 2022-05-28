@@ -149,5 +149,8 @@ body {
 @import "~starry-rating/src/style/Starry.scss";
 // Подключение стилей отдельных страниц
 @import "project/page/home";
+@import "project/page/loginpage";
+@import "project/page/register";
+@import "project/page/error";
 
 // @import "project/starry";

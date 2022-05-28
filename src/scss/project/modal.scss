@@ -1,0 +1,85 @@
+.modal {
+	@include adaptiveValue("padding-top", 112, 50);
+	@include adaptiveValue("padding-bottom", 120, 50);
+	&__container {
+	}
+
+	&__heading-list {
+		display: flex;
+		justify-content: center;
+		@include adaptiveValue("gap", 65, 45);
+		@include adaptiveValue("margin-bottom", 50, 45);
+	}
+
+	&__heading-item {
+		font-family: $rbt;
+		color: #909090;
+		font-size: rem(22);
+		line-height: math.div(26.4, 22);
+	}
+
+	&__heading-link {
+		&--active {
+			color: $mc;
+		}
+	}
+
+	&__form {
+		display: grid;
+		grid-template-columns: minmax(auto, 590px);
+		justify-content: center;
+	}
+
+	&__label {
+		display: grid;
+
+		@include adaptiveValue("margin-bottom", 55, 50);
+		&:first-child {
+			@include adaptiveValue("margin-bottom", 35, 31);
+		}
+		&--last {
+			margin-bottom: 0;
+			display: flex;
+			align-items: center;
+			grid-gap: 15px;
+			margin-bottom: 18px;
+		}
+	}
+
+	&__input {
+		padding: 20px;
+		margin-top: 10px;
+		background-color: #f6f6f6;
+		&--check {
+			margin-top: 0;
+			padding: 0;
+		}
+	}
+	&__info {
+		display: grid;
+		grid-gap: 35px;
+		margin-bottom: 20px;
+	}
+	&__text {
+	}
+	&__text {
+	}
+	&__btn {
+		text-transform: uppercase;
+		font-family: $rbt;
+		color: #fff;
+		padding: 20px 0;
+		background-color: $ttc;
+		@include adaptiveValue("margin-bottom", 15, 14);
+		letter-spacing: 2px;
+		transition: all 0.4s ease 0s;
+		&:hover {
+			background-color: $mc;
+			transform: scale(1.05);
+		}
+	}
+
+	&__link {
+		color: $mc;
+	}
+}

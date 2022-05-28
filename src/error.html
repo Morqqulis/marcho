@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+
+	<div class="wrapper wrapper--error">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<section class="error">
+				<div class="error__container">
+					<div class="error__row">
+						<div class="error__info">
+							<h3 class="error__title title">OPPS! Page Not Found!!</h3>
+							<p class="error__text">
+								We,re sorry but we can’t seem to find the pages you request. This might be because you have
+								typed the web address not find incorrectly.
+							</p>
+							<a class="error__btn btn" href="">BACK TO HOME</a>
+						</div>
+						<img class="error__img" src="img/error/1.svg" alt="">
+					</div>
+				</div>
+			</section>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+
+
+</body>
+
+</html>

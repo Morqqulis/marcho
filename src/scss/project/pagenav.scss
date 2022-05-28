@@ -1,0 +1,29 @@
+.pagenav {
+	// @include adaptiveValue("margin-bottom", 112, 50);
+	&__container {
+	}
+
+	&__title {
+		margin-bottom: 17px;
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+
+	&__link {
+	}
+}
+.pagenav-big-cont {
+	max-width: 1700px;
+	margin: 0 auto;
+	background: top center / cover no-repeat;
+	min-height: 360px;
+	@include adaptiveValue("padding-top", 118, 115);
+	@include adaptiveValue("padding-bottom", 135, 130);
+	text-align: center;
+}
+
+
