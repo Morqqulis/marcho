@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 @@include('html/_head.htm',{
-"title":"Регистрация"
+"title":"Register Page"
 })
 
 <body>
 
-	<div class="wrapper">
+	<div class="wrapper wrapper_reg">
 		@@include('html/_header.htm',{})
 		<main class="page">
 
-			<section class="pagenav">
-				<div class="pagenav-big-cont" style="background-image: url('@img/pagenav/bg.jpg');">
-					<div class="pagenav__container">
-						<h2 class="pagenav__title title">REGISTER</h2>
-						<div class="pagenav__breadcrumbs breadcrumbs">
-							<ul class="pagenav__list breadcrumbs__list">
-								<li class="pagenav__item breadcrumbs__item">
-									<a class="pagenav__link breadcrumbs__link" href="#">Home</a>
-								</li>
-								<li class="pagenav__item breadcrumbs__item">
-									<a class="pagenav__link breadcrumbs__link" href="#">REGISTER</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
+			@@include("html/pagenav.htm",{
+			"title": "REGISTER",
+			"back": "Home",
+			"this": "Register"
+			})
 
 			<div class="modal">
 				<div class="modal__container">
 					<ul class="modal__heading-list">
 						<li class="modal__heading-item">
-							<a class="modal__heading-link modal__heading-link--active" href="#">REGISTER</a>
+							<a class="modal__heading-link modal__heading-link--active" href="register.html">REGISTER</a>
 						</li>
 						<li class="modal__heading-item">
-							<a class="modal__heading-link" href="#">LOGIN</a>
+							<a class="modal__heading-link" href="login.html">LOGIN</a>
 						</li>
 					</ul>
 					<form class="modal__form" action="#">

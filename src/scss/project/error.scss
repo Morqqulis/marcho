@@ -1,6 +1,6 @@
 .error {
-   @include adaptiveValue("padding-top", 120, 60);
-   @include adaptiveValue("padding-bottom", 120, 60);
+	@include adaptiveValue("padding-top", 120, 60);
+	@include adaptiveValue("padding-bottom", 120, 60);
 	&__container {
 	}
 
@@ -37,7 +37,7 @@
 	}
 
 	&__btn {
-      box-shadow: 0 5px 25px #FE3E57;
+		box-shadow: 0 5px 25px #fe3e57;
 		@media (max-width: $mobile) {
 			margin: 0 auto;
 		}
@@ -45,9 +45,9 @@
 
 	&__img {
 		width: 100%;
-      @media (max-width:$mobile){
-         max-width: 600px;
-         margin: 0 auto; 
-      }
+		@media (max-width: $mobile) {
+			max-width: 600px;
+			margin: 0 auto;
+		}
 	}
 }

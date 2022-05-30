@@ -25,7 +25,7 @@
 		@include adaptiveValue("grid-gap", 30, 15);
 		@include adaptiveValue("margin-bottom", 58, 38);
 		@media (max-width: $mobile) {
-			grid-template-columns: minmax(auto, 440px);
+			grid-template-columns: minmax(auto, auto);
 		}
 	}
 
@@ -43,7 +43,8 @@
 	display: grid;
 	justify-items: center;
 	text-align: center;
-	position: relative;
+
+	max-width: 370px;
 
 	&:hover {
 		.card__links {
@@ -51,9 +52,17 @@
 			visibility: visible;
 		}
 	}
+	&__box {
+		position: relative;
+		height: 100%;
+	}
 	&__img {
 		width: 100%;
 		margin-bottom: 27px;
+		max-width: 370px;
+		@media (max-width: $mobileSmall) {
+			max-width: auto;
+		}
 	}
 
 	&__decor {
@@ -74,7 +83,9 @@
 
 	&__links {
 		position: absolute;
-		top: 270px;
+		top: 75%;
+		left: 50%;
+		transform: translate(-50%,-75%);
 		transition: all 0.4s ease 0s;
 		opacity: 0;
 		visibility: hidden;
@@ -112,10 +123,13 @@
 	&__icon {
 		display: block;
 		fill: #29282d;
-		transition: all 0.4s ease 0s;
+		transition: all 0.3s ease 0s;
 	}
 
 	&__info {
+		&_shop {
+			display: none;
+		}
 	}
 
 	&__info--prices {
@@ -157,6 +171,12 @@
 
 	&__old-price {
 		text-decoration: line-through;
+	}
+	&__text {
+		display: none;
+	}
+	&__btn {
+		display: none;
 	}
 }
 .card--sale {

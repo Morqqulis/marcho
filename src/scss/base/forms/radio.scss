@@ -5,6 +5,7 @@
 	// .options__item
 	&__item {
 		position: relative;
+		width: 100%;
 		cursor: pointer;
 		&:not(:last-child) {
 			margin-bottom: em(5);
@@ -30,7 +31,7 @@
 		display: inline-flex;
 		align-items: center;
 		cursor: pointer;
-		gap: 10px;
+		gap: 15px;
 		&:before {
 			content: "";
 			align-self: flex-start;
@@ -38,7 +39,7 @@
 			height: 20px;
 			flex: 0 0 20px;
 			border-radius: 50%;
-			border: 1px solid #a7a9ac;
+			border: 1px solid #8D8D8D;
 		}
 		&:after {
 			content: "";
@@ -47,7 +48,8 @@
 			width: 10px;
 			height: 10px;
 			border-radius: 50%;
-			background-color: #77243a;
+			background-color:inherit;
+			background: url('@img/checkmark.svg') center no-repeat;
 			position: absolute;
 			left: 5px;
 			top: 5px;
@@ -55,5 +57,7 @@
 	}
 	// .options__text
 	&__text {
+		margin-top: -3px;
+		text-transform: capitalize;
 	}
 }

@@ -1,0 +1,220 @@
+<div class="shop__filter filter">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.6.0/nouislider.min.js"
+      integrity="sha512-1mDhG//LAjM3pLXCJyaA+4c+h5qmMoTc7IuJyuNNPaakrWT9rVTxICK4tIizf7YwJsXgDC2JP74PGCc7qxLAHw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"
+      integrity="sha512-igVQ7hyQVijOUlfg3OmcTZLwYJIBXU63xL9RC12xBHNpmGJAktDnzl9Iw0J4yrSaQtDxTTVlwhY730vphoVqJQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
+   <div class="filter__item filter__search search">
+      <h3 class="filter__title search__title">SEARCH</h3>
+      <form class="search__form" action="#">
+         <label class="search__label">
+            <input class="search__input input" type="search" name="form[]" data-error="Ошибка" placeholder="Search your keyword....">
+         </label>
+         <button class="search__btn btn" type="submit">
+            <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20">
+               <path id="search"
+                  d="M1439.892,63.7l-5.81-5.81a7.93,7.93,0,1,0-1.178,1.178l5.81,5.81a.416.416,0,0,0,.589,0l.589-.589A.416.416,0,0,0,1439.892,63.7Zm-11.961-4.533a6.25,6.25,0,1,1,6.25-6.25A6.257,6.257,0,0,1,1427.931,59.163Z"
+                  transform="translate(-1420.014 -44.997)" />
+            </svg>
+         </button>
+      </form>
+   </div>
+
+   <div class="filter__item filter__price price">
+      <h3 class="filter__title price__title">PRICE FILTER</h3>
+      <form class="price__form" action="#">
+         <label class="price__label">
+            <div class="price__input"></div>
+         </label>
+         <div class="price__box">
+            <div class="price__decor">Price:
+               <span class="price__min"></span>
+               -
+               <span class="price__max"></span>
+            </div>
+            <button class="price__btn btn" type="submit">FILTER</button>
+         </div>
+      </form>
+      <!-- Price editing !!! -->
+      <script>
+         const priceSlider = document.querySelector(".price__input");
+         noUiSlider.create(priceSlider, {
+            start: [ 200, 800 ],
+            tooltips: false,
+            connect: true,
+            margin: 30,
+            keyboardSupport: true,      // Default true
+            keyboardDefaultStep: 40,     // Default 10
+            keyboardPageMultiplier: 40,// Default 5
+            format: wNumb({
+               decimals: 0,
+               prefix: "$",
+            }),
+
+
+
+
+            padding: 0,
+            range: {
+               min: 0,
+               max: 999,
+            },
+         });
+
+         priceSlider.noUiSlider.on('update', function (values, handle) {
+
+            let min = document.querySelector('.price__min');
+            let max = document.querySelector('.price__max');
+            if (handle) {
+               max.innerHTML = values[ handle ];
+            } else {
+               min.innerHTML = values[ handle ];
+            }
+         })
+      </script>
+      <!-- end -->
+   </div>
+
+   <div class="filter__item filter__color color">
+      <h3 class="filter__title color__title">COLOR FILTER</h3>
+      <form class="color__form" action="#">
+         <div class="color__checkbox checkbox">
+            <input class="checkbox__input" id="color_1" data-error="Ошибка" type="checkbox" value="1" name="form[]">
+            <label class="checkbox__label" for="color_1"><span class="checkbox__text">Blue (15)</span></label>
+         </div>
+         <div class="color__checkbox checkbox">
+            <input id="color_2" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+            <label for="color_2" class="checkbox__label"><span class="checkbox__text">Red (09)</span></label>
+         </div>
+         <div class="color__checkbox checkbox">
+            <input id="color_3" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+            <label for="color_3" class="checkbox__label"><span class="checkbox__text">Green (28)</span></label>
+         </div>
+         <div class="color__checkbox checkbox">
+            <input id="color_4" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+            <label for="color_4" class="checkbox__label"><span class="checkbox__text">Orange (11)</span></label>
+         </div>
+         <div class="color__checkbox checkbox">
+            <input id="color_5" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+            <label for="color_5" class="checkbox__label"><span class="checkbox__text">Black (05)</span></label>
+         </div>
+         <div class="color__checkbox checkbox">
+            <input id="color_6" data-error="Ошибка" class="checkbox__input" type="checkbox" value="1" name="form[]">
+            <label for="color_6" class="checkbox__label"><span class="checkbox__text">Purple (21)</span></label>
+         </div>
+      </form>
+   </div>
+
+   <div class="filter__item filter__size size">
+      <h3 class="filter__title size__title">SIZE FILTER</h3>
+      <form class="size__form" action="#">
+         <div class="size__options options">
+            <div class="options__item">
+               <input hidden id="size_1" class="options__input" checked type="radio" value="1" name="option">
+               <label for="size_1" class="options__label"><span class="options__text">X-small</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="size_2" class="options__input" type="radio" value="1" name="option">
+               <label for="size_2" class="options__label"><span class="options__text">Small</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="size_3" class="options__input"  type="radio" value="1" name="option">
+               <label for="size_3" class="options__label"><span class="options__text">Medium</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="size_4" class="options__input" type="radio" value="1" name="option">
+               <label for="size_4" class="options__label"><span class="options__text">Large</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="size_5" class="options__input" type="radio" value="1" name="option">
+               <label for="size_5" class="options__label"><span class="options__text">XXL</span></label>
+            </div>
+         </div>
+      </form>
+   </div>
+
+   <div class="filter__item filter__category category">
+      <h3 class="filter__title category__title">CATEGORY</h3>
+      <form class="category__form" action="#">
+         <div class="category__options options">
+            <div class="options__item">
+               <input hidden id="category_1" class="options__input" checked type="radio" value="1" name="option">
+               <label for="category_1" class="options__label">
+                  <span class="options__text">Woman</span>
+                  <span class="options__text">48</span>
+               </label>
+            </div>
+            <div class="options__item">
+               <input hidden id="category_2" class="options__input" type="radio" value="1" name="option">
+               <label for="category_2" class="options__label">
+                  <span class="options__text">Man</span>
+                  <span class="options__text">30</span>
+               </label>
+            </div>
+            <div class="options__item">
+               <input hidden id="category_3" class="options__input" checked type="radio" value="1" name="option">
+               <label for="category_3" class="options__label">
+                  <span class="options__text">Sale Products</span>
+                  <span class="options__text">92</span>
+               </label>
+            </div>
+            <div class="options__item">
+               <input hidden id="category_4" class="options__input" type="radio" value="1" name="option">
+               <label for="category_4" class="options__label">
+                  <span class="options__text">Fashion</span>
+                  <span class="options__text">121</span>
+               </label>
+            </div>
+            <div class="options__item">
+               <input hidden id="category_5" class="options__input" checked type="radio" value="1" name="option">
+               <label for="category_5" class="options__label">
+                  <span class="options__text">Hot Dresses</span>
+                  <span class="options__text">52</span>
+               </label>
+            </div>
+            <div class="options__item">
+               <input hidden id="category_6" class="options__input" type="radio" value="1" name="option">
+               <label for="category_6" class="options__label">
+                  <span class="options__text">Accessories</span>
+                  <span class="options__text">88</span>
+               </label>
+            </div>
+         </div>
+      </form>
+   </div>
+
+   <div class="filter__item filter__tags tags">
+      <h3 class="filter__title tags__title">Popular Tags</h3>
+      <form class="tags__form" action="#">
+         <div class="tags__options options">
+            <div class="options__item">
+               <input hidden id="tag_1" class="options__input" checked type="radio" value="1" name="option">
+               <label for="tag_1" class="options__label"><span class="options__text">Sweetshirt</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="tag_2" class="options__input" type="radio" value="1" name="option">
+               <label for="tag_2" class="options__label"><span class="options__text">Man Accessories</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="tag_3" class="options__input" checked type="radio" value="1" name="option">
+               <label for="tag_3" class="options__label"><span class="options__text">Fashion</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="tag_4" class="options__input" type="radio" value="1" name="option">
+               <label for="tag_4" class="options__label"><span class="options__text">Polo</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="tag_5" class="options__input" checked type="radio" value="1" name="option">
+               <label for="tag_5" class="options__label"><span class="options__text">T-Shirt</span></label>
+            </div>
+            <div class="options__item">
+               <input hidden id="tag_6" class="options__input" type="radio" value="1" name="option">
+               <label for="tag_6" class="options__label"><span class="options__text">Jewellery</span></label>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>

@@ -1,0 +1,354 @@
+.shop {
+
+	&__filter {
+		max-width: 370px;
+	}
+}
+.filter {
+	max-width: 370px;
+	display: grid;
+	@include adaptiveValue("gap", 40, 30);
+	&__item {
+		border: 1px solid #ececec;
+
+		max-width: 370px;
+		@include adaptiveValue("padding-top", 33, 23);
+		@include adaptiveValue("padding-right", 30, 20);
+		@include adaptiveValue("padding-bottom", 40, 30);
+		@include adaptiveValue("padding-left", 30, 20);
+	}
+
+	&__search {
+	}
+
+	&__title {
+		color: #29282d;
+		font-family: $rbt;
+		font-size: 22px;
+		line-height: math.div(26, 22);
+		font-weight: 400;
+		margin-bottom: 30px;
+	}
+
+	&__price {
+	}
+
+	&__color {
+	}
+
+	&__size {
+	}
+
+	&__category {
+	}
+
+	&__tags {
+	}
+}
+.search {
+	&__title {
+		margin-bottom: 25px;
+	}
+	&__form {
+		display: flex;
+	}
+
+	&__label {
+	}
+
+	&__input {
+		padding-top: 14px;
+		padding-bottom: 14px;
+		background-color: #f6f6f6;
+	}
+
+	&__btn {
+		margin-left: -1px;
+		padding: 15px 17.5px;
+	}
+	&__icon {
+		width: 15px;
+		fill: #fff;
+	}
+}
+
+.price {
+	&__title {
+		margin-bottom: 35px;
+	}
+	&__form {
+	}
+
+	&__label {
+		margin-bottom: 20px;
+	}
+
+	&__input {
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__decor {
+	}
+
+	&__min {
+		padding-left: 2px;
+	}
+
+	&__max {
+	}
+
+	&__btn {
+	}
+}
+.color {
+	&__title {
+		margin-bottom: 20px;
+	}
+	&__form {
+	}
+
+	&__checkbox {
+		padding-top: 15px;
+		padding-bottom: 15px;
+		&:not(:last-child) {
+			border-bottom: 1px solid #ebebeb;
+		}
+	}
+}
+.checkbox {
+	input {
+		&:checked + .checkbox__label::before {
+			background: url("@img/check.svg") center no-repeat;
+		}
+	}
+	input {
+		&:checked + .checkbox__label > span {
+			color: $mc;
+		}
+	}
+	&:nth-child(1) {
+		label {
+			&::before {
+				background-color: #00aeef;
+			}
+		}
+		input {
+			&:checked + .checkbox__label::before {
+				background-color: #00aeef;
+			}
+		}
+	}
+	&:nth-child(2) {
+		label {
+			&::before {
+				background-color: #f52574;
+			}
+		}
+		input {
+			&:checked + .checkbox__label::before {
+				background-color: #f52574;
+			}
+		}
+	}
+	&:nth-child(3) {
+		label {
+			&::before {
+				background-color: #24d4ac;
+			}
+		}
+		input {
+			&:checked + .checkbox__label::before {
+				background-color: #24d4ac;
+			}
+		}
+	}
+	&:nth-child(4) {
+		label {
+			&::before {
+				background-color: #ff7e00;
+			}
+		}
+		input {
+			&:checked + .checkbox__label::before {
+				background-color: #ff7e00;
+			}
+		}
+	}
+	&:nth-child(5) {
+		label {
+			&::before {
+				background-color: #000;
+			}
+		}
+		input {
+			&:checked + .checkbox__label::before {
+				background-color: #000;
+			}
+			&:checked + .checkbox__label > span {
+				color: $mc;
+			}
+		}
+	}
+	&:nth-child(6) {
+		label {
+			&::before {
+				background-color: #923899;
+			}
+		}
+		input {
+			&:checked + .checkbox__label::before {
+				background-color: #923899;
+			}
+		}
+	}
+	&__input {
+	}
+
+	&__label {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	&__text {
+	}
+}
+.size {
+	&__title {
+		margin-bottom: 34px;
+	}
+	&__form {
+	}
+
+	&__options {
+		display: grid;
+		grid-gap: 10px;
+		input {
+			&:checked + .options__label > span {
+				color: $mc;
+			}
+		}
+	}
+}
+.options {
+	&__item {
+	}
+
+	&__input {
+		&:checked + .options__label:before {
+			border-color: $mc;
+		}
+	}
+
+	&__label {
+	}
+
+	&__text {
+	}
+}
+.category {
+	&__title {
+		margin-bottom: 35px;
+	}
+	&__form {
+	}
+
+	.options {
+		display: grid;
+		grid-gap: 10px;
+		input:checked + .options__label {
+			background-color: $mc;
+			color: #fff;
+		}
+		&__item {
+			background-color: #f6f6f6;
+		}
+		&__label {
+			display: flex;
+			justify-content: space-between;
+			height: 100%;
+			width: 100%;
+			padding: 14px 20px;
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
+.tags {
+	&__title {
+		margin-bottom: 35px;
+	}
+	&__form {
+	}
+	.options {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		grid-gap: 15px 20px;
+		input:checked + .options__label {
+			background-color: $mc;
+			color: #fff;
+			border-color: $mc;
+		}
+		&__item {
+			width: auto;
+		}
+		&__label {
+			text-align: center;
+			padding: 9px 20px;
+			border: 1px solid #8d8d8d;
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+		&__text {
+			white-space: nowrap;
+		}
+	}
+}
+
+
+
+// =============================
+.noUi-connect {
+	background-color: $mc;
+}
+
+.noUi-connects {
+	background-color: #ececec;
+	height: 5px;
+}
+.noUi-base {
+}
+.price__input {
+	width: 100%;
+	height: 5px;
+   max-width: 310px;
+}
+.price__label {
+	height: 30px;
+   display: block;
+}
+.noUi-horizontal .noUi-handle {
+	top: -15px !important;
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	cursor: pointer;
+	box-shadow: 0 0 13px rgba($color: #5a5a5a, $alpha: 0.2);
+	&::before,
+	&::after {
+		content: "";
+		display: none;
+	}
+}
+

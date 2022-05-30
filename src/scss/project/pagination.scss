@@ -1,0 +1,43 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include adaptiveValue("gap", 20, 15);
+	&__prev {
+		position: relative;
+		padding-left: 13px;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+
+		&_left {
+			left: 0;
+			transform: translate(0px, -50%) rotate(90deg) scale(1) skew(0, 0);
+		}
+		&_right {
+			right: 0;
+			transform: translate(0px, -50%) rotate(-90deg) scale(1) skew(0, 0);
+		}
+	}
+
+	&__list {
+		display: flex;
+		max-width: 200px;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__item {
+	}
+
+	&__link {
+	}
+
+	&__next {
+		position: relative;
+		padding-right: 13px;
+	}
+}

@@ -1,29 +1,37 @@
 .deal {
 	display: grid;
-   grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
 	gap: 5px;
+	background-color: #f6f6f6;
 	@include adaptiveValue("margin-bottom", 120, 50);
-   @media (max-width:$tablet){
-      grid-template-columns: auto;
-      justify-items: center;
-      gap: 25px;
-   }
+	background: left center / cover no-repeat;
+	@include adaptiveValue("height", 690, 380);
+	@media (max-width: $tablet) {
+		grid-template-columns: auto;
+		justify-items: center;
+		gap: 25px;
+	}
+
 	&__img {
-      width: 100%;
+		width: 100%;
 	}
 
 	&__container {
-   }
-   
-   &__row {
+	}
+
+	&__row {
+		grid-column: 2/2;
+		@media (max-width: $tablet) {
+			grid-column: 1 / auto;
+		}
 	}
 
 	&__box {
 		text-align: center;
-      max-width: 570px;
-      width: 100%;
-      display: grid;
+		max-width: 570px;
+		width: 100%;
+		display: grid;
 	}
 
 	&__discount {
@@ -32,22 +40,33 @@
 
 	&__title {
 		@include adaptiveValue("margin-bottom", 60, 38);
-      @include adaptiveValue("font-size", 48,30,1200,992,1 );
+		@include adaptiveValue("font-size", 48, 30, 1200, 992, 1);
 	}
 
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(4, auto);
 		@include adaptiveValue("gap", 30, 20);
-      @include adaptiveValue("margin-bottom", 60, 30);
+		@include adaptiveValue("margin-bottom", 60, 30);
+		@media (max-width: $mobile) {
+			grid-template-columns: repeat(2, auto);
+		}
 	}
 
 	&__li {
+		@include adaptiveValue("width", 120, 80);
+		@include adaptiveValue("height", 120, 80);
+		background-color: #fff;
+		border-radius: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	&__number {
 		font-family: $rbt;
-		@include adaptiveValue("font-size", 48,30,1200,992,1 );
+		@include adaptiveValue("font-size", 48, 30, 1200, 992, 1);
 		line-height: math.div(26, 48);
 		padding-bottom: 5px;
 		color: $ttc;
@@ -59,7 +78,7 @@
 	}
 
 	&__btn {
-      margin: 0 auto;
+		margin: 0 auto;
 		cursor: pointer;
 	}
 }
